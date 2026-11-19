@@ -46,6 +46,14 @@ pnpm check
 
 Usa Node.js 24 y la versión de pnpm indicada en `package.json`. `pnpm check` corre lint, tipos, compilación y Playwright sobre `next start`. GitHub Actions ejecuta la misma secuencia en PRs y en `main`.
 
+## Despliegue automático
+
+La POC utiliza un único ambiente desplegado: **producción**. Vercel está conectado al repositorio y solo despliega cambios de `main`; los pull requests ejecutan el CI sin crear previews. La restricción por rama está versionada en `vercel.json`.
+
+El build de Vercel puede ejecutarse en paralelo con GitHub Actions, pero el dominio público solo se actualiza cuando pasa el check **Verificar el build de producción** del mismo commit. Si falla, se conserva la versión publicada.
+
+Este check se configura en Vercel, en **Settings → Build and Deployment → Deployment Checks**. Si cambia el nombre del job de CI, también debe actualizarse allí para mantener la condición de publicación.
+
 Los datos y las imágenes son locales. Consulta los [créditos y licencias](public/photos/CREDITS.md). La demo está desplegada en Vercel; la [exportación estática no soporta rutas interceptadas](https://nextjs.org/docs/app/guides/static-exports#unsupported-features).
 
 Referencias: [Intercepting Routes](https://nextjs.org/docs/app/api-reference/file-conventions/intercepting-routes) · [Parallel Routes](https://nextjs.org/docs/app/api-reference/file-conventions/parallel-routes).
