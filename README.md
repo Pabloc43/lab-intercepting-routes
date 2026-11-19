@@ -1,8 +1,10 @@
 # Intercepting Routes: una foto, una URL
 
+[Abrir la demo en Vercel](https://lab-intercepting-routes.vercel.app/galeria)
+
 La misma dirección, `/foto/montanas`, abre un modal si llegas desde la galería y una página completa si entras directo. El modal no necesita una segunda URL ni un estado local que se sincronice con el router.
 
-## Prueba la demo
+## Ejecutar localmente
 
 ```sh
 pnpm install --frozen-lockfile
@@ -44,6 +46,6 @@ pnpm check
 
 Usa Node.js 24 y la versión de pnpm indicada en `package.json`. `pnpm check` corre lint, tipos, compilación y Playwright sobre `next start`. GitHub Actions ejecuta la misma secuencia en PRs y en `main`.
 
-Los datos y las imágenes son locales. Consulta los [créditos y licencias](public/photos/CREDITS.md). El deploy previsto es Vercel con el preset Next.js; la [exportación estática no soporta rutas interceptadas](https://nextjs.org/docs/app/guides/static-exports#unsupported-features).
+Los datos y las imágenes son locales. Consulta los [créditos y licencias](public/photos/CREDITS.md). La demo está desplegada en Vercel; la [exportación estática no soporta rutas interceptadas](https://nextjs.org/docs/app/guides/static-exports#unsupported-features).
 
 Referencias: [Intercepting Routes](https://nextjs.org/docs/app/api-reference/file-conventions/intercepting-routes) · [Parallel Routes](https://nextjs.org/docs/app/api-reference/file-conventions/parallel-routes).
