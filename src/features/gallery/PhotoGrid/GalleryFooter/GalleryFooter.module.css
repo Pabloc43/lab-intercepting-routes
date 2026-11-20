@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .8rem;
+  color: var(--quiet);
+  font-size: .73rem;
+  font-weight: 680;
+  letter-spacing: .095em;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding: 1.15rem 0 2rem;
+  border-top: 1px solid var(--line);
+}
