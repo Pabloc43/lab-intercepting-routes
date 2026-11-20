@@ -1,7 +1,5 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
 import type { Photo } from '../catalog';
+import { PhotoCard } from './PhotoCard';
 import styles from './PhotoGrid.module.css';
 
 interface PhotoGridProps {
@@ -36,29 +34,7 @@ export function PhotoGrid({ photos }: PhotoGridProps) {
         <ul className={styles.grid}>
           {photos.map((photo, index) => (
             <li key={photo.id}>
-              <Link
-                className={styles.card}
-                href={`/foto/${photo.id}`}
-                data-photo-id={photo.id}
-                id={`gallery-photo-${photo.id}`}
-                scroll={false}
-              >
-                <div className={styles.frame}>
-                  <Image
-                    alt=""
-                    fill
-                    src={photo.src}
-                    sizes="(max-width: 38rem) 94vw, (max-width: 56rem) 46vw, (max-width: 74rem) 30vw, 22rem"
-                    className={styles.image}
-                    unoptimized
-                  />
-                </div>
-                <div className={styles.caption}>
-                  <span className={styles.number} aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-                  <span className={styles.name}>{photo.title}</span>
-                  <span className={styles.arrow} aria-hidden="true">↗</span>
-                </div>
-              </Link>
+              <PhotoCard photo={photo} position={index + 1} />
             </li>
           ))}
         </ul>

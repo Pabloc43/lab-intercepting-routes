@@ -1,0 +1,52 @@
+.card {
+  display: block;
+  height: 100%;
+  overflow: clip;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: .68rem;
+  text-decoration: none;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #dde5da;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.caption {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: .6rem;
+  padding: .72rem .88rem .83rem;
+}
+
+.number {
+  color: var(--quiet);
+  font-size: .73rem;
+  font-weight: 680;
+  letter-spacing: .095em;
+  text-transform: uppercase;
+}
+
+.name {
+  font-size: .96rem;
+  font-weight: 690;
+}
+
+.arrow {
+  color: var(--accent);
+  font-weight: 750;
+}
