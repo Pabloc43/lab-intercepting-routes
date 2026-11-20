@@ -1,8 +1,8 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
-import { useLayoutEffect, useRef, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
+import { useModal } from './useModal';
 import styles from './PhotoModal.module.css';
 
 interface PhotoModalProps {
@@ -13,46 +13,14 @@ interface PhotoModalProps {
 }
 
 export function PhotoModal({ children, photoId, title, standaloneHref }: PhotoModalProps) {
-  const router = useRouter();
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
-  const closing = useRef(false);
-
-  useLayoutEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-
-    const trigger = document.getElementById(`gallery-photo-${photoId}`);
-    const previousFocus = document.activeElement;
-    closing.current = false;
-
-    dialog.showModal();
-    closeRef.current?.focus({ preventScroll: true });
-
-    return () => {
-      dialog.close();
-      const target = trigger ?? previousFocus;
-      if (target instanceof HTMLElement && target.isConnected) {
-        target.focus({ preventScroll: true });
-      }
-    };
-  }, [photoId]);
-
-  function closeModal() {
-    if (closing.current) return;
-    closing.current = true;
-    router.back();
-  }
+  const { dialogRef, closeRef, closeModal, handleCancel } = useModal(photoId);
 
   return (
     <dialog
       ref={dialogRef}
       className={styles.dialog}
       aria-label={title}
-      onCancel={(event) => {
-        event.preventDefault();
-        closeModal();
-      }}
+      onCancel={handleCancel}
     >
       <div className={styles.toolbar}>
         <span>Vista rápida</span>
