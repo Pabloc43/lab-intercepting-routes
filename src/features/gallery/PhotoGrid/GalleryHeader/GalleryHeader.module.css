@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .8rem;
+  min-height: 4.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  letter-spacing: -.035em;
+}
+
+.edition {
+  color: var(--quiet);
+  font-size: .73rem;
+  font-weight: 680;
+  letter-spacing: .095em;
+  text-transform: uppercase;
+}
