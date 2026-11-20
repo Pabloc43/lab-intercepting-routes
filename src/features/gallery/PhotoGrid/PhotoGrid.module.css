@@ -26,7 +26,7 @@
   letter-spacing: -.035em;
 }
 
-.edition, .eyebrow, .sectionHeading span, .number, .footer {
+.edition, .eyebrow, .sectionHeading span, .footer {
   color: var(--quiet);
   font-size: .73rem;
   font-weight: 680;
@@ -96,38 +96,6 @@
   gap: clamp(.75rem, 2vw, 1.45rem);
   list-style: none;
 }
-
-.card {
-  display: block;
-  height: 100%;
-  overflow: clip;
-  background: var(--surface);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: .68rem;
-  text-decoration: none;
-}
-
-.frame {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #dde5da;
-}
-
-.image { object-fit: cover; }
-.card:hover { border-color: var(--accent); color: var(--accent); }
-
-.caption {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: baseline;
-  gap: .6rem;
-  padding: .72rem .88rem .83rem;
-}
-
-.name { font-size: .96rem; font-weight: 690; }
-.arrow { color: var(--accent); font-weight: 750; }
 
 .footer {
   flex-wrap: wrap;
