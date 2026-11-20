@@ -15,17 +15,45 @@
   scrollbar-gutter: stable;
 }
 
-* { box-sizing: border-box; }
-body { margin: 0; }
-h1, h2, p, figure { margin: 0; }
-ul { margin: 0; padding: 0; }
-img { display: block; max-width: 100%; }
-a { color: var(--accent); text-underline-offset: .2em; }
-button { font: inherit; }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+p,
+figure {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: .2em;
+}
+
+button {
+  font: inherit;
+}
 
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: .25rem;
 }
 
-html:has(dialog:modal) { overflow: hidden; }
+html:has(dialog:modal) {
+  overflow: hidden;
+}
